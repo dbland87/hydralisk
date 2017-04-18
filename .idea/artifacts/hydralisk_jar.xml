@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="hydralisk:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/hydralisk_jar</output-path>
+    <root id="root">
+      <element id="archive" name="hydralisk.jar">
+        <element id="module-output" name="hydralisk" />
+      </element>
+      <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.1.5" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
+      <element id="library" level="project" name="Maven: c3p0:c3p0:0.9.1.1" />
+    </root>
+  </artifact>
+</component>
