@@ -24,6 +24,6 @@ public class SpawnUnitsWorker {
 
     private void spawnEvent(User user){
         //TODO Figure out which monster was spawned. Store in database. Send a push
-        
+
     }
 }
