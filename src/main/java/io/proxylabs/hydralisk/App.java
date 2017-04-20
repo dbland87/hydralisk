@@ -1,6 +1,7 @@
 package io.proxylabs.hydralisk;
 
 import io.proxylabs.hydralisk.database.DbService;
+import io.proxylabs.hydralisk.http.HttpService;
 import io.proxylabs.hydralisk.unit_generator.UnitGenerator;
 import org.quartz.SchedulerException;
 
@@ -16,9 +17,13 @@ public class App {
 
     private static Properties properties = new Properties();
     private static DbService dbService;
+    private static HttpService httpService;
 
     public static DbService getDbService() {
         return dbService;
+    }
+    public static HttpService getHttpService() {
+        return httpService;
     }
 
     public static void main(String[] args )
@@ -31,6 +36,9 @@ public class App {
 
         //Init db service
         dbService = DbService.getInstance(properties);
+
+        //Init http service
+        httpService = HttpService.getInstance(properties);
     }
 
     public static void retrieveConfig(){

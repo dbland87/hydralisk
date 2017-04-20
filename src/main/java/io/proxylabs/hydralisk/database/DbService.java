@@ -11,9 +11,9 @@ import java.util.Properties;
  */
 public class DbService {
 
-    private static final String DB_USER = "dbuser";
-    private static final String DB_PASSWORD = "dbpassword";
-    private static final String JDBC_URL = "jdbc_url";
+    private static final String PROPERTIES_DB_USER = "dbuser";
+    private static final String PROPERTIES_DB_PASSWORD = "dbpassword";
+    private static final String PROPERTIES_JDBC_URL = "jdbc_url";
     private static final String USER_ID = "id";
     private static final String USER_NAME = "name";
     private static final String USER_BAG_ID = "bag_id";
@@ -35,7 +35,7 @@ public class DbService {
 
     private boolean connect(){
         try {
-            connection = DriverManager.getConnection(properties.getProperty(JDBC_URL), properties.getProperty(DB_USER), properties.getProperty(DB_PASSWORD));
+            connection = DriverManager.getConnection(properties.getProperty(PROPERTIES_JDBC_URL), properties.getProperty(PROPERTIES_DB_USER), properties.getProperty(PROPERTIES_DB_PASSWORD));
         } catch (SQLException e) {
             //TODO Log this and handle
         }
