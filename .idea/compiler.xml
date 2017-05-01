@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="hydralisk" />
+        <module name="spawning_pool" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hydralisk" target="1.5" />
+      <module name="spawning_pool" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/hydralisk.iml" filepath="$PROJECT_DIR$/hydralisk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spawning_pool.iml" filepath="$PROJECT_DIR$/spawning_pool.iml" />
     </modules>
   </component>
 </project>

@@ -1,9 +1,9 @@
 <component name="ArtifactManager">
-  <artifact name="hydralisk:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/hydralisk_jar</output-path>
+  <artifact name="spawning_pool:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/spawning_pool_jar</output-path>
     <root id="root">
       <element id="archive" name="hydralisk.jar">
-        <element id="module-output" name="hydralisk" />
+        <element id="module-output" name="spawning_pool" />
       </element>
       <element id="library" level="project" name="Maven: org.quartz-scheduler:quartz:2.1.5" />
       <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />

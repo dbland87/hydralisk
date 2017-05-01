@@ -1,4 +1,4 @@
-package io.proxylabs.hydralisk;
+package io.proxylabs.spawning_pool;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
