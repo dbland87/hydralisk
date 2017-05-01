@@ -19,6 +19,9 @@ public class DbService {
     private static final String PROPERTIES_DB_PASSWORD = "dbpassword";
     private static final String PROPERTIES_JDBC_URL = "jdbc_url";
     private static final String TABLE_UNIT_TEMPLATES = "unit_templates";
+    private static final String TABLE_UNITS = "units_unit";
+    private static final String TABLE_USERS = "user_auth_user";
+
     private static final String USER_ID = "id";
     private static final String USER_NAME = "name";
     private static final String USER_BAG_ID = "bag_id";
@@ -63,7 +66,7 @@ public class DbService {
     }
 
     public ArrayList<User> retrieveAllUsers(){
-        String query = "select * from users";
+        String query = String.format("select * from %s;", TABLE_USERS);
         ArrayList<User> allUsers = new ArrayList<User>();
         Statement statement = null;
         ResultSet resultSet = null;
@@ -119,7 +122,9 @@ public class DbService {
                 resultSet = statement.executeQuery(query);
 
                 if (resultSet != null){
-                    return new Unit(resultSet.getInt(UNIT_TEMPLATES_ID), resultSet.getString(UNIT_TEMPLATES_NAME), resultSet.getString(UNIT_TEMPLATES_TYPE));
+                    while (resultSet.next()) {
+                        return new Unit(resultSet.getInt(UNIT_TEMPLATES_ID), resultSet.getString(UNIT_TEMPLATES_NAME), resultSet.getString(UNIT_TEMPLATES_TYPE));
+                    }
                 }
 
             } catch (SQLException e){
@@ -128,5 +133,18 @@ public class DbService {
 
         }
         return null;
+    }
+
+    public void saveUnit(Unit unit, User user){
+        String query = String.format("insert into `%s` (`name`, `bag_id`) VALUES ('%s', '%s');", TABLE_UNITS, unit.getName(), user.getBag_id());
+        Statement statement = null;
+        if (connect()){
+            try{
+                statement = connection.createStatement();
+                statement.execute(query);
+            } catch (SQLException e){
+                //TODO Log and handle
+            }
+        }
     }
 }

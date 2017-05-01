@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class SpawnUnitsWorker {
 
     private static final String DB_SPAWN_LOOT_TABLE = "LT_unit_spawn";
+    private static final String DB_UNIT_TABLE = "units_unit";
     private static final String SPAWN_NOTIFICATION_TITLE = "You caught a monster!";
     private static final String SPAWN_NOTIFICATION_BODY = " has been added to your collection.";
 
@@ -45,7 +46,9 @@ public class SpawnUnitsWorker {
 
         if (unit != null){
             Notification notification = new Notification(SPAWN_NOTIFICATION_TITLE, "A " + unit.getName() + SPAWN_NOTIFICATION_BODY);
-            httpService.postNotification(notification);
+//            httpService.postNotification(notification);
+            //TODO this needs to go to a specific user
+            dbService.saveUnit(unit, user);
         }
     }
 }
