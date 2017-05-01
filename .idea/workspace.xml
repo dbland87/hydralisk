@@ -6,36 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c522450a-ebe7-44f2-9693-9d2567a9dee5" name="Default" comment="Added logic to save units to db">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/spawning_pool_dependencies_jar.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/hydralisk_jar/c3p0-0.9.1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/hydralisk_jar/hydralisk.jar.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/hydralisk_jar/quartz-2.1.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/hydralisk_jar/slf4j-api-1.6.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/App.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/database/DbService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/http/HttpService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/jobs/UnitGenerationJob.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/loot/LootEngine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/models/LootTableItem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/models/Message.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/models/Notification.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/models/Unit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/models/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/unit_generator/UnitGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/io/proxylabs/hydralisk/workers/SpawnUnitsWorker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/io/proxylabs/hydralisk/App.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/io/proxylabs/hydralisk/jobs/UnitGenerationJob.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/io/proxylabs/hydralisk/unit_generator/UnitGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/io/proxylabs/hydralisk/AppTest.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/artifacts/hydralisk_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/spawning_pool_jar.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/hydralisk.iml" afterPath="$PROJECT_DIR$/spawning_pool.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="c522450a-ebe7-44f2-9693-9d2567a9dee5" name="Default" comment="Read spawn interval from config">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/proxylabs/spawning_pool/unit_generator/UnitGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/io/proxylabs/hydralisk/AppTest.java" afterPath="$PROJECT_DIR$/src/test/java/io/proxylabs/hydralisk/AppTest.java" />
     </list>
     <ignored path="hydralisk.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -612,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493677878020</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Read spawn interval from config">
+      <created>1493681724221</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1493681724221</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -672,7 +652,8 @@
     <MESSAGE value="Added http service" />
     <MESSAGE value="Added LootEngine" />
     <MESSAGE value="Added logic to save units to db" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logic to save units to db" />
+    <MESSAGE value="Read spawn interval from config" />
+    <option name="LAST_COMMIT_MESSAGE" value="Read spawn interval from config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
