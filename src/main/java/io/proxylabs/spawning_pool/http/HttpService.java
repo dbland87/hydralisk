@@ -1,8 +1,7 @@
 package io.proxylabs.spawning_pool.http;
 
 import com.google.gson.Gson;
-import io.proxylabs.spawning_pool.models.Message;
-import io.proxylabs.spawning_pool.models.Notification;
+import io.proxylabs.spawning_pool.models.*;
 import jdk.nashorn.internal.objects.NativeJSON;
 import okhttp3.*;
 
@@ -17,6 +16,8 @@ public class HttpService {
     private static final String PROPERTIES_FCM_SERVER_KEY = "fcm_server_key";
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private static final String FCM_POST_URL = "https://fcm.googleapis.com/fcm/send";
+    private static final String SPAWN_NOTIFICATION_TITLE = "You caught a monster!";
+    private static final String SPAWN_NOTIFICATION_BODY = " has been added to your collection.";
 
     private static HttpService httpService;
     private OkHttpClient client = new OkHttpClient();
@@ -49,10 +50,9 @@ public class HttpService {
         }
     }
 
-    public void postNotification (Notification notification){
-        Message message = new Message();
-        message.setNotification(notification);
-
+    public void postNotification (FcmToken token, Unit unit){
+        Notification notification = new Notification(SPAWN_NOTIFICATION_TITLE, "A " + unit.getName() + SPAWN_NOTIFICATION_BODY);
+        Message message = new Message(token.getBody(), notification);
         post(FCM_POST_URL, gson.toJson(message));
     }
 

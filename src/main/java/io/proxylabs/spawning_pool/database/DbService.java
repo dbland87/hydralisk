@@ -1,5 +1,6 @@
 package io.proxylabs.spawning_pool.database;
 
+import io.proxylabs.spawning_pool.models.FcmToken;
 import io.proxylabs.spawning_pool.models.LootTableItem;
 import io.proxylabs.spawning_pool.models.Unit;
 import io.proxylabs.spawning_pool.models.User;
@@ -19,6 +20,7 @@ public class DbService {
     private static final String PROPERTIES_DB_PASSWORD = "dbpassword";
     private static final String PROPERTIES_JDBC_URL = "jdbc_url";
     private static final String TABLE_UNIT_TEMPLATES = "unit_templates";
+    private static final String TABLE_USER_AUTH_FCMTOKEN = "user_auth_fcmtoken";
     private static final String TABLE_UNITS = "units_unit";
     private static final String TABLE_USERS = "user_auth_user";
 
@@ -30,6 +32,9 @@ public class DbService {
     private static final String UNIT_TEMPLATES_ID = "id";
     private static final String UNIT_TEMPLATES_NAME = "name";
     private static final String UNIT_TEMPLATES_TYPE = "type";
+    private static final String FCMTOKEN_ID = "id";
+    private static final String FCMTOKEN_USER_ID = "user_id";
+    private static final String FCMTOKEN_BODY = "body";
 
     private static DbService dbService;
     private Properties properties;
@@ -124,6 +129,29 @@ public class DbService {
                 if (resultSet != null){
                     while (resultSet.next()) {
                         return new Unit(resultSet.getInt(UNIT_TEMPLATES_ID), resultSet.getString(UNIT_TEMPLATES_NAME), resultSet.getString(UNIT_TEMPLATES_TYPE));
+                    }
+                }
+
+            } catch (SQLException e){
+                //TODO Log and handle
+            }
+
+        }
+        return null;
+    }
+
+    public FcmToken getTokenFromUser(User user){
+        String query = String.format("select * from %s where user_id = %s;", TABLE_USER_AUTH_FCMTOKEN, user.getId());
+        Statement statement = null;
+        ResultSet resultSet = null;
+        if (connect()){
+            try{
+                statement = connection.createStatement();
+                resultSet = statement.executeQuery(query);
+
+                if (resultSet != null){
+                    while (resultSet.next()) {
+                        return new FcmToken(resultSet.getInt(FCMTOKEN_ID), resultSet.getString(FCMTOKEN_BODY), resultSet.getInt(FCMTOKEN_USER_ID));
                     }
                 }
 

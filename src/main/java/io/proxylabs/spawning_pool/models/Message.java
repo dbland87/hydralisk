@@ -15,6 +15,11 @@ public class Message {
     @Expose
     private Notification notification;
 
+    public Message(String to, Notification notification){
+        this.to = to;
+        this.notification = notification;
+    }
+
     public String getTo() {
         return to;
     }
