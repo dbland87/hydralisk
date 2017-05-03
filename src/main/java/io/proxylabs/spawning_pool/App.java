@@ -31,14 +31,14 @@ public class App {
         //Pull config from properties file
         retrieveConfig();
 
-        //Start unit generator
-        initUnitGenerator();
-
         //Init db service
         dbService = DbService.getInstance(properties);
 
         //Init http service
         httpService = HttpService.getInstance(properties);
+
+        //Start unit generator
+        initUnitGenerator();
     }
 
     public static void retrieveConfig(){
