@@ -42,6 +42,7 @@ public class App {
     }
 
     public static void retrieveConfig(){
+        System.out.println("Retrieving config");
         InputStream input = null;
         try {
             input = new FileInputStream(PATH_TO_PROPERTIES_FILE);
@@ -55,6 +56,7 @@ public class App {
     }
 
     public static void initUnitGenerator(){
+        System.out.println("Starting unit generation");
         try {
             UnitGenerator unitGenerator = UnitGenerator.getInstance(Integer.parseInt(
                     properties.getProperty(PROPERTY_SPAWN_INTERVAL)));

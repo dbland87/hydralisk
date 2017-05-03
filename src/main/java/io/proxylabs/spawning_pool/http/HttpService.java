@@ -53,6 +53,7 @@ public class HttpService {
     public void postNotification (FcmToken token, Unit unit){
         Notification notification = new Notification(SPAWN_NOTIFICATION_TITLE, "A " + unit.getName() + SPAWN_NOTIFICATION_BODY);
         Message message = new Message(token.getBody(), notification);
+        System.out.println("Post Notification: " + gson.toJson(message));
         post(FCM_POST_URL, gson.toJson(message));
     }
 

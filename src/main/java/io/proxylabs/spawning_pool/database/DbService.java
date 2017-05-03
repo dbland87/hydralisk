@@ -119,6 +119,7 @@ public class DbService {
 
     public Unit getUnitFromId(int id){
         String query = String.format("select * from %s where id = %s;", TABLE_UNIT_TEMPLATES, id);
+        System.out.println("Getting Unit, query: " + query);
         Statement statement = null;
         ResultSet resultSet = null;
         if (connect()){
@@ -142,6 +143,7 @@ public class DbService {
 
     public FcmToken getTokenFromUser(User user){
         String query = String.format("select * from %s where user_id = %s;", TABLE_USER_AUTH_FCMTOKEN, user.getId());
+        System.out.println("Getting token, query: " + query);
         Statement statement = null;
         ResultSet resultSet = null;
         if (connect()){
@@ -165,6 +167,7 @@ public class DbService {
 
     public void saveUnit(Unit unit, User user){
         String query = String.format("insert into `%s` (`name`, `bag_id`) VALUES ('%s', '%s');", TABLE_UNITS, unit.getName(), user.getBag_id());
+        System.out.println("Saving unit, query: " + query);
         Statement statement = null;
         if (connect()){
             try{

@@ -39,6 +39,7 @@ public class SpawnUnitsWorker {
 
         Unit unit = dbService.getUnitFromId(lootItem.getUnit_id());
         FcmToken token = dbService.getTokenFromUser(user);
+        System.out.println("Retrieved token from db: " + token.getBody());
 
         if (unit != null && token != null && token.getBody() != null){
             httpService.postNotification(token, unit);
